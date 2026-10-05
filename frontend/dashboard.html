@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <h1>Dashboard</h1>
+
+        <p id="welcomeMessage"></p>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+
+    <script>
+
+        const userName =
+            localStorage.getItem("user_name");
+
+
+        if (userName) {
+
+            document.getElementById("welcomeMessage").innerText =
+                "Welcome, " + userName + "!";
+
+        } else {
+
+            window.location.href = "login.html";
+
+        }
+
+
+        function logout() {
+
+            localStorage.removeItem("user_id");
+
+            localStorage.removeItem("user_name");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

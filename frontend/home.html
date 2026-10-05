@@ -1,0 +1,394 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
+    <title>Resume Builder & Management System</title> 
+ 
+    <link rel="stylesheet" href="css/home.css"> 
+</head> 
+ 
+<body> 
+ 
+    <!-- ================= NAVBAR ================= --> 
+ 
+    <header class="navbar"> 
+ 
+        <div class="logo-section"> 
+ 
+            <div class="logo-icon"> 
+                📄 
+            </div> 
+ 
+            <div class="logo-text"> 
+                <h2>Resume Builder</h2> 
+                <span>& Management System</span> 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <nav class="navigation"> 
+ 
+            <a href="home.html" class="active"> 
+                Home 
+            </a> 
+ 
+            <!-- These are currently only navigation placeholders --> 
+          <a href="javascript:void(0);" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">
+                   Features
+          </a>
+          <a href="javascript:void(0);" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">
+                   About
+</a>
+ 
+        </nav> 
+ 
+ 
+        <div class="auth-buttons"> 
+ 
+            <!-- Connects to your existing login page --> 
+            <a href="login.html" class="login-btn"> 
+                Login 
+            </a> 
+ 
+            <!-- Connects to your existing register page --> 
+            <a href="register.html" class="register-btn"> 
+                Register 
+            </a> 
+ 
+        </div> 
+ 
+    </header> 
+ 
+ 
+    <!-- ================= HERO SECTION ================= --> 
+ 
+    <section class="hero"> 
+ 
+        <div class="hero-left"> 
+ 
+            <div class="small-label"> 
+                ✦ Build Your Future 
+            </div> 
+ 
+ 
+            <h1> 
+                Create Your Professional 
+                <span>Resume</span> 
+                with Ease 
+            </h1> 
+ 
+ 
+            <p> 
+                Manage your professional profile and keep your career 
+                information organized in one simple and secure system. 
+            </p> 
+ 
+ 
+            <div class="hero-buttons"> 
+ 
+                <!-- User must login/register before using system --> 
+                <a href="login.html" class="primary-btn"> 
+                    <span>✎</span> 
+                    Get Started 
+                </a> 
+ 
+ 
+                <a href="register.html" class="secondary-btn"> 
+                    <span>➜</span> 
+                    Create Account 
+                </a> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <!-- ================= HERO RIGHT ================= --> 
+ 
+        <div class="hero-right"> 
+ 
+            <div class="background-circle circle-one"></div> 
+ 
+            <div class="background-circle circle-two"></div> 
+ 
+ 
+            <!-- Feature cards --> 
+ 
+            <div class="feature-card feature-one"> 
+ 
+                <div class="feature-icon blue"> 
+                    📄 
+                </div> 
+ 
+                <div> 
+                    <strong>Professional</strong> 
+                    <small>Profile Management</small> 
+                </div> 
+ 
+            </div> 
+ 
+ 
+            <div class="feature-card feature-two"> 
+ 
+                <div class="feature-icon green"> 
+                    ✓ 
+                </div> 
+ 
+                <div> 
+                    <strong>Easy to Use</strong> 
+                    <small>Simple Interface</small> 
+                </div> 
+ 
+            </div> 
+ 
+ 
+            <div class="feature-card feature-three"> 
+ 
+                <div class="feature-icon purple"> 
+                    ☁ 
+                </div> 
+ 
+                <div> 
+                    <strong>Secure</strong> 
+                    <small>Manage Your Data</small> 
+                </div> 
+ 
+            </div> 
+ 
+ 
+            <!-- Main illustration --> 
+ 
+            <div class="dashboard-card"> 
+ 
+                <div class="card-header"> 
+ 
+                    <div class="profile-circle"> 
+                        👤 
+                    </div> 
+ 
+                    <div> 
+                        <h3>Your Career</h3> 
+                        <p>Professional Profile</p> 
+                    </div> 
+ 
+                </div> 
+ 
+ 
+                <div class="line long"></div> 
+                <div class="line medium"></div> 
+ 
+ 
+                <div class="info-section"> 
+ 
+                    <div class="info-title"> 
+                        Personal Information 
+                    </div> 
+ 
+                    <div class="info-lines"> 
+                        <span></span> 
+                        <span></span> 
+                        <span></span> 
+                    </div> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-section"> 
+ 
+                    <div class="info-title"> 
+                        Education & Skills 
+                    </div> 
+ 
+                    <div class="skill-container"> 
+ 
+                        <span>Java</span> 
+                        <span>Python</span> 
+                        <span>SQL</span> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+ 
+                <div class="success-message"> 
+                    ✓ Profile Ready 
+                </div> 
+ 
+            </div> 
+ 
+ 
+            <div class="dream-text"> 
+                Your career<br> 
+                starts with<br> 
+                a strong profile! 
+            </div> 
+ 
+        </div> 
+ 
+    </section> 
+ 
+ 
+    <!-- ================= FEATURES ================= --> 
+ 
+    <section class="features" id="features"> 
+ 
+        <div class="section-heading"> 
+ 
+            <div class="section-label"> 
+                WHY CHOOSE US 
+            </div> 
+ 
+            <h2> 
+                Everything You Need in One Place 
+            </h2> 
+ 
+            <p> 
+                A simple management system designed to help you 
+                organize your professional information. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="feature-grid"> 
+ 
+ 
+            <!-- Feature 1 --> 
+ 
+            <div class="feature-box"> 
+ 
+                <div class="box-icon blue-box"> 
+                    📄 
+                </div> 
+ 
+                <h3> 
+                    Professional Profile 
+                </h3> 
+ 
+                <p> 
+                    Maintain your personal and professional 
+                    information in an organized way. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- Feature 2 --> 
+ 
+            <div class="feature-box"> 
+ 
+                <div class="box-icon green-box"> 
+                    ✎ 
+                </div> 
+ 
+                <h3> 
+                    Easy Management 
+                </h3> 
+ 
+                <p> 
+                    Update and manage your information using 
+                    a simple and user-friendly interface. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- Feature 3 --> 
+ 
+            <div class="feature-box"> 
+ 
+                <div class="box-icon purple-box"> 
+                    ☁ 
+                </div> 
+ 
+                <h3> 
+                    Secure Data 
+                </h3> 
+ 
+                <p> 
+                    Keep your account and professional information 
+                    protected through secure authentication. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- Feature 4 --> 
+ 
+            <div class="feature-box"> 
+ 
+                <div class="box-icon pink-box"> 
+                    ✓ 
+                </div> 
+ 
+                <h3> 
+                    Easy Access 
+                </h3> 
+ 
+                <p> 
+                    Access your account and manage your 
+                    information whenever you need it. 
+                </p> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </section> 
+ 
+ 
+    <!-- ================= ABOUT ================= --> 
+ 
+    <section class="about" id="about"> 
+ 
+        <div> 
+ 
+            <div class="section-label"> 
+                ABOUT SYSTEM 
+            </div> 
+ 
+            <h2> 
+                Build Your Professional Future 
+            </h2> 
+ 
+            <p> 
+                Resume Builder & Management System provides a 
+                centralized platform where users can securely 
+                manage their professional information. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="about-button"> 
+ 
+            <a href="register.html"> 
+                Get Started → 
+            </a> 
+ 
+        </div> 
+ 
+    </section> 
+ 
+ 
+    <!-- ================= FOOTER ================= --> 
+ 
+    <footer> 
+ 
+        <div> 
+            <strong>Resume Builder & Management System</strong> 
+        </div> 
+ 
+        <p> 
+            © 2026 Resume Builder. All Rights Reserved. 
+        </p> 
+ 
+    </footer> 
+ 
+ 
+</body> 
+</html>
