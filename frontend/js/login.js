@@ -12,6 +12,9 @@ loginForm.addEventListener("submit", async function(event) {
     const password =
         document.getElementById("password").value;
 
+    const role =
+        document.getElementById("role").value;
+
     const message =
         document.getElementById("message");
 
@@ -29,7 +32,8 @@ loginForm.addEventListener("submit", async function(event) {
 
                 body: JSON.stringify({
                     email: email,
-                    password: password
+                    password: password,
+                    role: role
                 })
             }
         );
@@ -50,10 +54,15 @@ loginForm.addEventListener("submit", async function(event) {
             );
 
 
-            // Save user's name
+            // Save user's name and role
             localStorage.setItem(
                 "user_name",
                 data.name
+            );
+
+            localStorage.setItem(
+                "user_role",
+                data.role
             );
 
 

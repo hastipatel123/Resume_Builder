@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard - JobSmart</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="images/JobSMart.png" alt="JobSmart">
+            <div>
+                <h2>JobSmart</h2>
+                <span>Recruiter Panel</span>
+            </div>
+        </div>
+        <nav>
+            <a href="recruiter_dashboard.html" class="nav-link active"><span>📊</span> Dashboard</a>
+            <a href="recruiter_dashboard.html#post-job" class="nav-link" id="navPostJob"><span>➕</span> Post a Job</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="logout-btn"><span>↪</span> Logout</button>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <div>
+                <h1>Recruiter Dashboard</h1>
+                <p>Post jobs and review matched candidates.</p>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">R</div>
+                <div>
+                    <strong id="userName">Recruiter</strong>
+                    <small id="userRole">Recruiter</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Stats -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon job-icon">💼</div>
+                <div><span>Jobs Posted</span><h2 id="statJobs">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon match-icon">👥</div>
+                <div><span>Total Applicants</span><h2 id="statApplicants">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon resume-icon">✅</div>
+                <div><span>Approved</span><h2 id="statApproved">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon score-icon">❌</div>
+                <div><span>Rejected</span><h2 id="statRejected">0</h2></div>
+            </div>
+        </section>
+
+
+        <!-- Post Job -->
+        <section class="r-section" id="post-job">
+
+            <div class="r-section-header">
+                <div>
+                    <h2>Post a Job Opening</h2>
+                    <p>Fill in the details to publish a new job listing</p>
+                </div>
+            </div>
+
+            <div class="r-card">
+                <form id="postJobForm">
+
+                    <div class="r-form-row">
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" placeholder="e.g. Python Developer" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobCompany">Company</label>
+                            <input type="text" id="jobCompany" placeholder="e.g. TechCorp">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea id="jobDescription" rows="6" placeholder="Describe the role, required skills, experience, responsibilities..." required></textarea>
+                    </div>
+
+                    <div class="r-form-actions">
+                        <button type="submit" class="submit-btn r-submit-btn">Post Job</button>
+                    </div>
+
+                </form>
+                <div id="jobMessage" class="r-message hidden"></div>
+            </div>
+
+        </section>
+
+
+        <!-- My Jobs & Candidates -->
+        <section class="r-section">
+
+            <div class="r-section-header">
+                <div>
+                    <h2>My Job Postings</h2>
+                    <p>Select a job to view matched candidates</p>
+                </div>
+                <button class="small-btn" onclick="loadMyJobs()">↻ Refresh</button>
+            </div>
+
+            <!-- Job list -->
+            <div id="jobsList" class="jobs-list">
+                <div class="empty-state">
+                    <div class="empty-icon">💼</div>
+                    <h3>No jobs posted yet</h3>
+                    <p>Use the form above to post your first job opening.</p>
+                </div>
+            </div>
+
+            <!-- Candidates panel (shown when a job is selected) -->
+            <div id="candidatesPanel" class="candidates-panel hidden">
+
+                <div class="candidates-header">
+                    <div>
+                        <h3 id="selectedJobTitle">Candidates for Job</h3>
+                        <p id="selectedJobCompany"></p>
+                    </div>
+                    <button class="small-btn" onclick="closeCandidates()">✕ Close</button>
+                </div>
+
+                <!-- Filter tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all" onclick="filterCandidates('all', this)">All</button>
+                    <button class="filter-tab" data-filter="pending" onclick="filterCandidates('pending', this)">Pending</button>
+                    <button class="filter-tab" data-filter="approved" onclick="filterCandidates('approved', this)">Approved</button>
+                    <button class="filter-tab" data-filter="rejected" onclick="filterCandidates('rejected', this)">Rejected</button>
+                </div>
+
+                <div id="candidatesList"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/recruiter_dashboard.js"></script>
+</body>
+</html>

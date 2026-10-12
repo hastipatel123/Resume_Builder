@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer - JobSmart</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="images/JobSMart.png" alt="JobSmart">
+            <div>
+                <h2>JobSmart</h2>
+                <span>Career Assistant</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+            <a href="resume.html" class="nav-link active"><span>📄</span> Resume Analyzer</a>
+            <a href="jobs.html" class="nav-link"><span>💼</span> Jobs</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="logout-btn"><span>↪</span> Logout</button>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <h1>Resume Analyzer</h1>
+                <p>Upload your resume and let NLP analyze your profile.</p>
+            </div>
+            <div class="user-info">
+                <div id="userAvatar" class="user-avatar">U</div>
+                <div>
+                    <strong id="userName">User</strong>
+                    <small id="userRole">Candidate</small>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="upload-card">
+
+            <div class="upload-icon">📄</div>
+            <h2>Upload Your Resume</h2>
+            <p>Upload your resume in PDF format. Our NLP system will extract your skills, education, experience and keywords.</p>
+
+            <div id="dropArea" class="drop-area">
+                <div class="upload-symbol">↑</div>
+                <h3>Drag & drop or choose your resume</h3>
+                <p>PDF files only · Max 10MB</p>
+                <label for="resumeFile" class="choose-btn">Choose PDF</label>
+                <input type="file" id="resumeFile" accept=".pdf" hidden>
+                <div id="selectedFile" class="selected-file">No file selected</div>
+            </div>
+
+            <button id="uploadBtn" class="upload-btn" disabled>Analyze Resume</button>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing your resume...</p>
+                <span>Extracting text and finding skills</span>
+            </div>
+
+            <div id="errorMessage" class="message error hidden"></div>
+            <div id="successMessage" class="message success hidden"></div>
+
+        </section>
+
+
+        <section id="resultsSection" class="results-section hidden">
+
+            <div class="section-heading" style="text-align:left; margin-bottom:16px;">
+                <h2>Resume Analysis</h2>
+                <p>Information extracted from your resume using NLP.</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-title">
+                    <span class="result-icon">🛠️</span>
+                    <div><h3>Extracted Skills</h3><p>Skills identified from your resume</p></div>
+                </div>
+                <div id="skillsContainer" class="tags-container">
+                    <span class="empty-result">No skills found</span>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-title">
+                    <span class="result-icon">🔑</span>
+                    <div><h3>Important Keywords</h3><p>Keywords extracted by NLP</p></div>
+                </div>
+                <div id="keywordsContainer" class="tags-container">
+                    <span class="empty-result">No keywords found</span>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-title">
+                    <span class="result-icon">🎓</span>
+                    <div><h3>Education</h3></div>
+                </div>
+                <div id="education" class="text-result">No education section detected.</div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-title">
+                    <span class="result-icon">💼</span>
+                    <div><h3>Experience</h3></div>
+                </div>
+                <div id="experience" class="text-result">No experience section detected.</div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-title">
+                    <span class="result-icon">🚀</span>
+                    <div><h3>Projects</h3></div>
+                </div>
+                <div id="projects" class="text-result">No projects section detected.</div>
+            </div>
+
+            <div class="matches-card">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:18px; color:#111827; margin-bottom:4px;">Recommended Jobs</h2>
+                    <p style="color:#6b7280; font-size:13px;">Jobs ranked according to your resume.</p>
+                </div>
+                <div id="jobMatches">
+                    <div class="no-matches">
+                        <div>🎯</div>
+                        <h3>No job matches yet</h3>
+                        <p>Add jobs from the Jobs page to calculate resume matching scores.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/resume.js"></script>
+</body>
+</html>

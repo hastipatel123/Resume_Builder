@@ -1,82 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+    <title>Login - JobSmart</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+<body class="auth-page">
 
-<body>
+    <div class="auth-card">
 
-    <div class="register-container">
-
-        <h1>Login</h1>
-
+        <div class="card-top">
+            <div class="card-logo">
+                <img src="images/JobSMart.png" alt="JobSmart">
+            </div>
+            <h1>Welcome Back</h1>
+            <p class="card-subtitle">Login to your JobSmart account</p>
+        </div>
 
         <form id="loginForm">
 
             <div class="form-group">
-
                 <label for="email">Email</label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
-
 
             <div class="form-group">
-
                 <label for="password">Password</label>
-
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    required
-                >
-
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
 
+            <div class="form-group">
+                <label for="role">Login As</label>
+                <select id="role" name="role" required>
+                    <option value="candidate">Candidate</option>
+                    <option value="recruiter">Recruiter</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
 
-            <button type="submit">
-                Login
-            </button>
+            <button type="submit" class="submit-btn">Login</button>
 
         </form>
 
-
         <p id="message"></p>
 
-
         <p class="login-link">
-
-            Don't have an account?
-
-            <a href="register.html">
-                Register
-            </a>
-
+            Don't have an account? <a href="register.html">Register</a>
         </p>
 
     </div>
 
-
     <script src="js/login.js"></script>
-
 </body>
-
 </html>

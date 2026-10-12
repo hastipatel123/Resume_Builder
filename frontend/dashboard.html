@@ -1,63 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Dashboard</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+    <title>Dashboard - JobSmart</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
 
-    <div class="register-container">
+    <aside class="sidebar">
 
-        <h1>Dashboard</h1>
+        <div class="sidebar-logo">
+            <img src="images/JobSMart.png" alt="JobSmart">
+            <div>
+                <h2>JobSmart</h2>
+                <span>Career Assistant</span>
+            </div>
+        </div>
 
-        <p id="welcomeMessage"></p>
+        <nav>
+            <a href="dashboard.html" class="nav-link active"><span>📊</span> Dashboard</a>
+            <a href="resume.html" class="nav-link"><span>📄</span> Resume Analyzer</a>
+            <a href="jobs.html" class="nav-link"><span>💼</span> Jobs</a>
+        </nav>
 
-        <button onclick="logout()">
-            Logout
-        </button>
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="logout-btn"><span>↪</span> Logout</button>
+        </div>
 
-    </div>
-
-
-    <script>
-
-        const userName =
-            localStorage.getItem("user_name");
-
-
-        if (userName) {
-
-            document.getElementById("welcomeMessage").innerText =
-                "Welcome, " + userName + "!";
-
-        } else {
-
-            window.location.href = "login.html";
-
-        }
+    </aside>
 
 
-        function logout() {
+    <main class="main-content">
 
-            localStorage.removeItem("user_id");
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Manage your resume and discover suitable jobs.</p>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div>
+                    <strong id="userName">User</strong>
+                    <small id="userRole">Candidate</small>
+                </div>
+            </div>
+        </header>
 
-            localStorage.removeItem("user_name");
 
-            window.location.href = "login.html";
+        <section class="welcome-card">
+            <div>
+                <h2>Welcome back, <span id="welcomeName">User</span>!</h2>
+                <p>Upload your resume and let our NLP system analyze your skills and find suitable job opportunities.</p>
+            </div>
+            <a href="resume.html" class="inner-btn">+ Analyze Resume</a>
+        </section>
 
-        }
 
-    </script>
+        <section class="stats-grid">
 
+            <div class="stat-card">
+                <div class="stat-icon resume-icon">📄</div>
+                <div><span>My Resumes</span><h2 id="resumeCount">0</h2></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon job-icon">💼</div>
+                <div><span>Available Jobs</span><h2 id="jobCount">0</h2></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon match-icon">🎯</div>
+                <div><span>Job Matches</span><h2 id="matchCount">0</h2></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon score-icon">⭐</div>
+                <div><span>Best Match</span><h2 id="bestScore">0%</h2></div>
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div><h2>My Resume</h2><p>Your latest uploaded resume</p></div>
+                    <a href="resume.html" class="small-btn">Analyze</a>
+                </div>
+                <div id="latestResume">
+                    <div class="empty-state">
+                        <div class="empty-icon">📄</div>
+                        <h3>No resume uploaded</h3>
+                        <p>Upload your PDF resume to start NLP analysis.</p>
+                        <a href="resume.html" class="inner-btn">Upload Resume</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div><h2>Top Job Matches</h2><p>Jobs matching your resume</p></div>
+                    <a href="jobs.html" class="small-btn">View Jobs</a>
+                </div>
+                <div id="topMatches">
+                    <div class="empty-state">
+                        <div class="empty-icon">🎯</div>
+                        <h3>No matches yet</h3>
+                        <p>Upload a resume and add jobs to see your matching results.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="how-section">
+
+            <div class="section-title">
+                <h2>How Resume Matching Works</h2>
+                <p>Our system uses NLP to compare your resume with job descriptions.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Upload Resume</h3>
+                    <p>Upload your resume as a PDF file.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>NLP Analysis</h3>
+                    <p>The system extracts text, skills and keywords from your resume.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Job Comparison</h3>
+                    <p>Your resume is compared with available job descriptions.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Match Score</h3>
+                    <p>You receive a percentage score for each job.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
 </body>
-
 </html>

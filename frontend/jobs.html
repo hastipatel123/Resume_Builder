@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - JobSmart</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="images/JobSMart.png" alt="JobSmart">
+            <div>
+                <h2>JobSmart</h2>
+                <span>Career Assistant</span>
+            </div>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+            <a href="resume.html" class="nav-link"><span>📄</span> Resume Analyzer</a>
+            <a href="jobs.html" class="nav-link active"><span>💼</span> Jobs</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="logout-btn"><span>↪</span> Logout</button>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Job Listings</h1>
+                <p>Browse all available jobs and see how well your resume matches.</p>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div>
+                    <strong id="userName">User</strong>
+                    <small id="userRole">Candidate</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Search & Filter bar -->
+        <div class="jobs-toolbar">
+
+            <div class="jobs-search-wrap">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="jobs-search"
+                    placeholder="Search by title, company or keyword..."
+                >
+            </div>
+
+            <div class="jobs-filters">
+                <select id="sortSelect" class="jobs-filter-select">
+                    <option value="newest">Newest First</option>
+                    <option value="score_high">Highest Match</option>
+                    <option value="score_low">Lowest Match</option>
+                </select>
+
+                <select id="statusFilter" class="jobs-filter-select">
+                    <option value="all">All Statuses</option>
+                    <option value="approved">Approved</option>
+                    <option value="pending">Pending</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="none">Not Applied</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <!-- Stats row -->
+        <div class="jobs-stats-row">
+            <span id="jobsCount" class="jobs-count-label">Loading...</span>
+            <span id="noResumeWarning" class="no-resume-warning hidden">
+                ⚠️ Upload a resume to see your match scores
+            </span>
+        </div>
+
+
+        <!-- Jobs grid -->
+        <div id="jobsGrid" class="jobs-grid">
+            <div class="jobs-loading">
+                <div class="spinner"></div>
+                <p>Loading jobs...</p>
+            </div>
+        </div>
+
+
+        <!-- Job detail modal -->
+        <div id="jobModal" class="job-modal-overlay hidden" onclick="closeModal(event)">
+            <div class="job-modal">
+
+                <div class="job-modal-header">
+                    <div>
+                        <h2 id="modalTitle"></h2>
+                        <p id="modalCompany"></p>
+                    </div>
+                    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+                </div>
+
+                <div class="job-modal-body">
+
+                    <div class="modal-meta-row">
+                        <span id="modalDate" class="modal-meta-item">📅</span>
+                        <span id="modalScore" class="modal-meta-item"></span>
+                        <span id="modalStatus" class="modal-meta-item"></span>
+                    </div>
+
+                          <!-- Apply Now -->
+                    <div class="apply-section">
+                        <button type="button" id="applyNowBtn" class="apply-now-btn">
+                            Apply Now
+                        </button>
+                        <p id="applyMessage" class="apply-message hidden"></p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Job Description</h4>
+                        <p id="modalDescription"></p>
+                    </div>
+
+                    <div class="modal-section" id="modalSkillsSection">
+                        <h4>Matched Skills</h4>
+                        <div id="modalSkills" class="tags-container"></div>
+                    </div>
+
+                    <div class="modal-section" id="modalKeywordsSection">
+                        <h4>Matched Keywords</h4>
+                        <div id="modalKeywords" class="tags-container"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/jobs.js"></script>
+</body>
+</html>

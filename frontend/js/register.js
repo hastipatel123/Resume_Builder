@@ -7,6 +7,7 @@ registerForm.addEventListener("submit", async function(event) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const role = document.querySelector("input[name='role']:checked").value;
 
     const message = document.getElementById("message");
 
@@ -24,7 +25,8 @@ registerForm.addEventListener("submit", async function(event) {
                 body: JSON.stringify({
                     name: name,
                     email: email,
-                    password: password
+                    password: password,
+                    role: role
                 })
             }
         );
